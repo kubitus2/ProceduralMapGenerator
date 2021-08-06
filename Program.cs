@@ -95,6 +95,10 @@ namespace ProceduralMapGenerator
                     sw.WriteLine("New map saved at {0}", DateTime.Now.ToString());
                     sw.WriteLine(content);
                 }
+
+                Console.Clear();
+                Console.WriteLine("Map succesfully saved to {0} at {1}", fileName, DateTime.Now.ToString());
+                Console.ReadLine();
             }
             catch (Exception ex)
             {
