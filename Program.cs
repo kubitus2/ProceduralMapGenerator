@@ -48,9 +48,7 @@ namespace ProceduralMapGenerator
                 }
                 map.Draw();
                 DisplayMenu(map.Density);
-
             }
-
         }
 
         static void DisplayMenu(int d)
