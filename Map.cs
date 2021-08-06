@@ -5,9 +5,9 @@ using System.Text;
 namespace ProceduralMapGenerator
 {
 
-
     class Map
     {
+
         const int NUMBER_OF_ITERATIONS = 3;
 
         readonly Random psrg = new Random();
@@ -39,7 +39,6 @@ namespace ProceduralMapGenerator
             {
                 for (int y = 0; y < _mapHeight; y++)
                 {
-                    //ensure that the edge is wall
                     if (x == 0 || y == 0 || x == _mapWidth - 1 || y == _mapHeight - 1)
                     {
                         _map[x, y] = 1;
@@ -57,7 +56,6 @@ namespace ProceduralMapGenerator
             return _map[x, y] == 1;
         }
 
-        //Count number of walls in adjacent cells.
         private int CountAdjacentWalls(int x, int y)
         {
             int wallCount = 0;
@@ -77,7 +75,6 @@ namespace ProceduralMapGenerator
             return wallCount;
         }
 
-        //Place wall logic.
         private int PlaceWall(int x, int y)
         {
             int adjWalls = CountAdjacentWalls(x, y);
@@ -109,8 +106,7 @@ namespace ProceduralMapGenerator
                 return _map[x, y];
             }
         }
-        //
-        //Carve caves by cellural automata algorithm.
+
         private void CaveMap(int numberOfIterations)
         {
             int[,] temp = new int[_mapWidth, _mapHeight];
@@ -129,6 +125,7 @@ namespace ProceduralMapGenerator
 
             _map = temp;
         }
+
         private void WriteAt(int x, int y, string s)
         {
             Console.SetCursorPosition(x, y);
