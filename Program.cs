@@ -105,7 +105,5 @@ namespace ProceduralMapGenerator
                 Console.ReadLine();
             }
         }
-
-
     }
 }
