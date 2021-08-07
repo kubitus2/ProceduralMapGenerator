@@ -7,7 +7,6 @@ namespace ProceduralMapGenerator
 
     class Map
     {
-
         const int NUMBER_OF_ITERATIONS = 3;
 
         readonly Random psrg = new Random();
@@ -29,10 +28,10 @@ namespace ProceduralMapGenerator
 
         private int RandomBlock()
         { 
-
             int rand = psrg.Next(0, 100);
             return rand >= _fillDensity ? 0 : 1;
         }
+
         private void RandomFill()
         {
             for (int x = 0; x < _mapWidth; x++)
@@ -106,7 +105,6 @@ namespace ProceduralMapGenerator
                 return _map[x, y];
             }
         }
-
         private void CaveMap(int numberOfIterations)
         {
             int[,] temp = new int[_mapWidth, _mapHeight];
@@ -125,7 +123,6 @@ namespace ProceduralMapGenerator
 
             _map = temp;
         }
-
         private void WriteAt(int x, int y, string s)
         {
             Console.SetCursorPosition(x, y);
@@ -151,6 +148,7 @@ namespace ProceduralMapGenerator
             else if (_fillDensity > 100)
                 _fillDensity = 100;
         }
+
         public void Draw()
         {
             for (int x = 0; x < _mapWidth; x++)
@@ -192,6 +190,5 @@ namespace ProceduralMapGenerator
 
             return sb.ToString();
         }
-
     }
 }

@@ -15,12 +15,10 @@ namespace ProceduralMapGenerator
             Console.Clear();
 
             MapBrowser();
-
         }
 
         static void MapBrowser()
         {
-
             Map map = new Map(MAP_WIDTH, MAP_HEIGHT, INITIAL_DENSITY);
             map.Init();
 
